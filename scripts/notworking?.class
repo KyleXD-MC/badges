@@ -1,0 +1,53 @@
+/***********************************************************/
+// Create a Data class to store data
+class Data {
+    constructor() {
+        this.data = {};
+    }
+    
+    // Function to convert a statement into base64 format
+    toBase64(statement) {
+        return btoa(statement);
+    }
+    
+    // Find related image in source1
+    findRelatedImage(source1) {
+        // Implementation to find related image
+    }
+
+    // Find related and same images in encodedOldImageSource
+    findImagesInOldSource(encodedOldImageSource) {
+        // Implementation to find related and same images in encodedOldImageSource
+    }
+
+    // Scan for the image
+    scanForImage() {
+        // Implementation to scan for the image
+    }
+}
+
+/***********************************************************/
+// Create an instance of the Data class
+const dataHandler = new Data();
+
+// Define the Source and OldImageSource URLs in base64 format with encryption key
+const Source = "YUhSMGNEb3ZMM2QzZDNkM2QzZDNkM2MzZDNkM0kybDBhSEF0T0dVd01EQXdNREHCo0FoclEyOXVkV0YwYVc5Ng==";
+const OldImageSource = "YUhSMGNEb3ZMM2QzZDNkM2QzZ..."; // Truncated for brevity
+
+/***********************************************************/
+// Convert statements to base64 format
+let encodedSource = dataHandler.toBase64(Source);
+let encodedOldImageSource = dataHandler.toBase64(OldImageSource);
+
+/***********************************************************/
+// Check if the ImageNotFound flag is set in encodedOldImageSource
+if (encodedOldImageSource.ImageNotFound) {
+    dataHandler.findRelatedImage(encodedSource);
+}
+
+/***********************************************************/
+// Check if the ImageIsNotRelated flag is set in encodedSource
+if (encodedSource.ImageIsNotRelated) {
+    dataHandler.findImagesInOldSource(encodedOldImageSource);
+    dataHandler.scanForImage();
+}
